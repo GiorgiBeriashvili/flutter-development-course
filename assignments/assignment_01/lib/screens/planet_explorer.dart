@@ -59,16 +59,6 @@ class _PlanetExplorerState extends State<PlanetExplorer> {
               ),
             ],
           ),
-          Padding(
-            padding: EdgeInsets.all(16.0),
-            child: Text(
-              _planet.description,
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.caption,
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-            ),
-          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: List.generate(
