@@ -2,6 +2,8 @@
 
 A new Flutter project.
 
+![Recording](assets/recordings/main.gif)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
