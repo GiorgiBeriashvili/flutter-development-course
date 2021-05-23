@@ -30,14 +30,14 @@ class Address extends Equatable {
     String? street,
     String? suite,
     String? city,
-    String? zipcode,
+    String? zipCode,
     GeographicPosition? geographicPosition,
   }) =>
       Address(
         street: street ?? this.street,
         suite: suite ?? this.suite,
         city: city ?? this.city,
-        zipCode: zipcode ?? this.zipCode,
+        zipCode: zipCode ?? this.zipCode,
         geographicPosition: geographicPosition ?? this.geographicPosition,
       );
 

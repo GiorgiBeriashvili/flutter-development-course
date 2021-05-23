@@ -23,12 +23,12 @@ class Company extends Equatable {
   Company copyWith({
     String? name,
     String? catchPhrase,
-    String? bs,
+    String? businessSlogan,
   }) =>
       Company(
         name: name ?? this.name,
         catchPhrase: catchPhrase ?? this.catchPhrase,
-        businessSlogan: bs ?? this.businessSlogan,
+        businessSlogan: businessSlogan ?? this.businessSlogan,
       );
 
   Map<String, dynamic> toMap() => {

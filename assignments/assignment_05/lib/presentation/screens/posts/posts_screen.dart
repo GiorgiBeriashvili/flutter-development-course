@@ -13,7 +13,7 @@ class PostsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: Text('Posts'),
+          title: const Text('Posts'),
         ),
         body: BlocConsumer<PostBloc, PostState>(
           listener: (context, state) {
@@ -36,7 +36,7 @@ class PostsScreen extends StatelessWidget {
           },
           builder: (context, state) {
             if (state is PostLoadInProgress) {
-              return Center(
+              return const Center(
                 child: CircularProgressIndicator(),
               );
             } else if (state is PostLoadSuccess) {
@@ -63,19 +63,21 @@ class PostsScreen extends StatelessWidget {
                     confirmDismiss: (direction) => showDialog(
                       context: context,
                       builder: (context) => AlertDialog(
-                        title: Text('Remove the post'),
-                        content: Text('Would you like to remove the post?'),
+                        title: const Text('Remove the post'),
+                        content: const Text(
+                          'Would you like to remove the post?',
+                        ),
                         actions: [
                           TextButton(
                               onPressed: () {
                                 Navigator.pop(context, false);
                               },
-                              child: Text('Cancel')),
+                              child: const Text('Cancel')),
                           TextButton(
                               onPressed: () {
                                 Navigator.pop(context, true);
                               },
-                              child: Text('Confirm')),
+                              child: const Text('Confirm')),
                         ],
                       ),
                     ),
@@ -89,8 +91,8 @@ class PostsScreen extends StatelessWidget {
                   onPressed: () => context.read<PostBloc>().add(
                         PostStarted(userId: userId),
                       ),
-                  icon: Icon(Icons.replay),
-                  label: Text('Retry'),
+                  icon: const Icon(Icons.replay),
+                  label: const Text('Retry'),
                 ),
               );
             }
@@ -101,7 +103,7 @@ class PostsScreen extends StatelessWidget {
           builder: (context, state) {
             if (state is PostLoadSuccess) {
               return FloatingActionButton(
-                child: Icon(Icons.add),
+                child: const Icon(Icons.add),
                 onPressed: () => Navigator.of(context)
                     .pushNamed(
                   AddPostScreen.routeName,
@@ -122,7 +124,7 @@ class PostsScreen extends StatelessWidget {
               );
             }
 
-            return FloatingActionButton(
+            return const FloatingActionButton(
               child: Icon(Icons.add),
               onPressed: null,
               backgroundColor: Colors.grey,

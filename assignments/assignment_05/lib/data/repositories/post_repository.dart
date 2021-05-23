@@ -14,11 +14,7 @@ class PostRepository {
   ) async {
     final Response<dynamic> response = await dio.post(
       'https://jsonplaceholder.typicode.com/posts',
-      data: {
-        'userId': post['userId'],
-        'title': post['title'],
-        'body': post['body'],
-      },
+      data: post,
     );
 
     posts.insert(0, Post.fromMap(response.data));

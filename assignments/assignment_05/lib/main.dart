@@ -6,5 +6,5 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 void main() {
   Bloc.observer = MainBlocObserver();
 
-  runApp(BlogApp());
+  runApp(const BlogApp());
 }

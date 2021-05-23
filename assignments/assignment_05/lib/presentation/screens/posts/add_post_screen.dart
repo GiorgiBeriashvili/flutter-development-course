@@ -23,7 +23,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: Text('Create Post'),
+          title: const Text('Create Post'),
         ),
         body: Form(
           key: formKey,
@@ -50,7 +50,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
                               padding: const EdgeInsets.symmetric(vertical: 8),
                               child: TextFormField(
                                 initialValue: widget.userId.toString(),
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   icon: Icon(Icons.tag),
                                   labelText: 'User ID',
                                   border: OutlineInputBorder(),
@@ -64,7 +64,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
                               child: TextFormField(
                                 keyboardType: TextInputType.name,
                                 controller: titleController,
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   icon: Icon(Icons.title),
                                   labelText: 'Title',
                                   hintText: 'Enter the title',
@@ -83,7 +83,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
                               child: TextFormField(
                                 keyboardType: TextInputType.multiline,
                                 controller: bodyController,
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   icon: Icon(Icons.description),
                                   labelText: 'Body',
                                   hintText: 'Enter the body',
@@ -113,7 +113,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
                         width: MediaQuery.of(context).size.width / 3,
                         child: ElevatedButton(
                           onPressed: () => Navigator.pop(context),
-                          child: Text('Back'),
+                          child: const Text('Back'),
                         ),
                       ),
                       SizedBox(
@@ -131,7 +131,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
                               );
                             }
                           },
-                          child: Text('Create'),
+                          child: const Text('Create'),
                         ),
                       ),
                     ],

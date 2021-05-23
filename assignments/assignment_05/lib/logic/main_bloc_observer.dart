@@ -16,10 +16,10 @@ class MainBlocObserver extends BlocObserver {
   }
 
   @override
-  void onError(BlocBase bloc, Object error, StackTrace stacktrace) {
-    print('${bloc.runtimeType} $error $stacktrace');
+  void onError(BlocBase bloc, Object error, StackTrace stackTrace) {
+    print('${bloc.runtimeType} $error $stackTrace');
 
-    super.onError(bloc, error, stacktrace);
+    super.onError(bloc, error, stackTrace);
   }
 
   @override

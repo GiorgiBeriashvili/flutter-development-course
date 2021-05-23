@@ -5,7 +5,7 @@ class MainRouter {
   static Route? onGenerateRoute(RouteSettings routeSettings) {
     if (routeSettings.name == HomeScreen.routeName) {
       return MaterialPageRoute(
-        builder: (context) => HomeScreen(),
+        builder: (context) => const HomeScreen(),
       );
     } else if (routeSettings.name == PostsScreen.routeName) {
       final userId = routeSettings.arguments as int;

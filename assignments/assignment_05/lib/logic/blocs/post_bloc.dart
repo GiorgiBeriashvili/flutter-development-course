@@ -44,9 +44,16 @@ class PostBloc extends Bloc<PostEvent, PostState> {
       yield PostLoadInProgress();
 
       try {
-        final posts = await postRepository.delete(event.posts, event.postId);
+        final targetPost = event.posts.firstWhere(
+          (post) => post.id == event.postId,
+        );
 
-        yield PostDeletedSuccess(message: 'Post has been deleted!');
+        final posts = await postRepository.delete(event.posts, targetPost.id);
+
+        yield PostDeletedSuccess(
+          message: '"${targetPost.title}" has been deleted!',
+        );
+
         yield PostLoadSuccess(posts: posts);
       } on DioError catch (exception) {
         yield PostLoadFailure(exception: exception);

@@ -7,10 +7,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class HomeScreen extends StatelessWidget {
   static const routeName = '/';
 
+  const HomeScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: Text(constants.appTitle),
+          title: const Text(constants.appTitle),
         ),
         body: BlocConsumer<UserBloc, UserState>(
           listener: (context, state) {
@@ -25,7 +27,7 @@ class HomeScreen extends StatelessWidget {
           },
           builder: (context, state) {
             if (state is UserLoadInProgress) {
-              return Center(
+              return const Center(
                 child: CircularProgressIndicator(),
               );
             } else if (state is UserLoadSuccess) {
@@ -38,7 +40,7 @@ class HomeScreen extends StatelessWidget {
                   return ListTile(
                     leading: CircleAvatar(
                       backgroundColor: Theme.of(context).primaryColorLight,
-                      child: Icon(Icons.person),
+                      child: const Icon(Icons.person),
                     ),
                     title: Text(user.name),
                     subtitle: Text(user.email),
@@ -59,8 +61,8 @@ class HomeScreen extends StatelessWidget {
               return Center(
                 child: ElevatedButton.icon(
                   onPressed: () => context.read<UserBloc>().add(UserStarted()),
-                  icon: Icon(Icons.replay),
-                  label: Text('Retry'),
+                  icon: const Icon(Icons.replay),
+                  label: const Text('Retry'),
                 ),
               );
             }
