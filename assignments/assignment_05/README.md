@@ -2,7 +2,7 @@
 
 A new Flutter project.
 
-[Recording](assets/recordings/main.gif)
+![Recording](assets/recordings/main.gif)
 
 ## Getting Started
 
