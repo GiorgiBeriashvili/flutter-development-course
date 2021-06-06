@@ -9,13 +9,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  final data = await rootBundle.load(
+  final byteData = await rootBundle.load(
     'assets/security/imgsrc-hubblesite-org.pem',
   );
 
-  final context = SecurityContext.defaultContext;
+  final securityContext = SecurityContext.defaultContext;
 
-  context.setTrustedCertificatesBytes(data.buffer.asUint8List());
+  securityContext.setTrustedCertificatesBytes(byteData.buffer.asUint8List());
 
   Bloc.observer = MainBlocObserver();
 
