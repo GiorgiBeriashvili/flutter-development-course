@@ -72,8 +72,8 @@ class TransactionBloc extends Bloc<TransactionEvent, TransactionState> {
               TransactionUpdatedAll(transactions: transactions),
             ),
           );
-    } on TransactionException catch (exception) {
-      yield TransactionLoadFailure(exception: exception);
+    } on Exception catch (exception) {
+      yield TransactionLoadFailure(exception: TransactionException(exception));
     }
   }
 
